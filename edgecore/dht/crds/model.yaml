@@ -1,0 +1,26 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  name: dht-model
+  namespace: default
+spec:
+  properties:
+    - name: temperature
+      description: Temperature collected from the edge device in celcius
+      type:
+        string:
+          accessMode: ReadOnly
+          defaultValue: ''
+    - name: humidity
+      description: Humidity collected from the edge device
+      type:
+        string:
+          accessMode: ReadOnly
+          defaultValue: ''
+    - name: sensor-pin-number
+      description: Indicates dht11 data pin number
+      type:
+        int:
+          accessMode: ReadOnly
+          defaultValue: 23
+    

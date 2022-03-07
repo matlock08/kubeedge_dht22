@@ -1,0 +1,3 @@
+Adafruit-DHT --install-option="--force-pi2"
+paho-mqtt
+argparse

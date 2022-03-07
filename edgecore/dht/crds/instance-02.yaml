@@ -1,0 +1,29 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: dht-instance-02
+  labels:
+    description: 'dht11'
+    manufacturer: 'test'
+spec:
+  deviceModelRef:
+    name: dht-model
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: ''
+            operator: In
+            values:
+              - node2
+status:
+  twins:
+    - propertyName: temperature
+      desired:
+        metadata:
+          type: string
+        value: ''
+    - propertyName: humidity
+      desired:
+        metadata:
+          type: string
+        value: ''
