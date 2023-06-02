@@ -1,7 +1,7 @@
 apiVersion: devices.kubeedge.io/v1alpha2
 kind: Device
 metadata:
-  name: dht-instance-03
+  name: dht-instance-01
   labels:
     description: 'dht11'
     manufacturer: 'test'
@@ -14,7 +14,7 @@ spec:
           - key: ''
             operator: In
             values:
-              - node3
+              - node1
 status:
   twins:
     - propertyName: temperature

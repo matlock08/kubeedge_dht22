@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dht11-03
+  name: dht11-01
   labels:
-    app: dht11-03
+    app: dht11-01
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dht11-03
+      app: dht11-01
   template:
     metadata:
       labels:
-        app: dht11-03
+        app: dht11-01
     spec:
       hostNetwork: true
       nodeSelector:
-        kubernetes.io/hostname: node3
+        kubernetes.io/hostname: node1
       containers:
-      - name: dht11-03
+      - name: dht11-01
         image: matlock08/kubeedge-dht:0.0.1
         command: ["python3","/opt/edgecore/dht/main.py"]
-        args: ["--device=dht-instance-03"]
+        args: ["--device=dht-instance-01"]
         imagePullPolicy: Always
         securityContext:
           privileged: true
@@ -31,5 +31,5 @@ spec:
       volumes:
       - name: config-volume
         configMap:
-          name: device-profile-config-node3
+          name: device-profile-config-node1
       restartPolicy: Always
